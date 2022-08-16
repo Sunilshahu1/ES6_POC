@@ -1,0 +1,35 @@
+(function()
+{
+           let num=[2,3,4];         
+           console.log("First Array Element:",num[0]);
+           let[...args]=num;
+           //console.log(args);
+           const n=num.shift();
+           console.log(n);
+           fun2(n,num);
+           //console.log(num);
+})();
+function fun2(n,num)
+{
+          let num1=[6,7];
+          console.log(num1);
+          const a=[n,...num1];
+          console.log(a);
+          const b=[...a,...num];
+          console.log(b);
+          const sum = b.reduce((a, b) => a + b, 0);
+          console.log("sum of all numbers:",sum)
+          const myPromise = new Promise((resolve, reject) => {
+           if (sum==22) {
+            resolve(sum);
+            }
+            reject(new Error('error'));
+         })
+          myPromise.then((message) => {  
+          console.log('success');   
+         }).catch((message) => {
+          console.log('error');
+         });
+           console.log(num instanceof Array);
+           console.log(typeof num);
+};
